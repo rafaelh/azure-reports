@@ -1,6 +1,8 @@
 """ Report on Dev Tenant Usage """
-import azure.mgmt.managementgroups
-from settings import AZURE_TENANT_ID, AZURE_CLIENT_ID, AZURE_CLIENT_SECRET, AZURE_SUBSCRIPTION_ID
+
+from azure.common.credentials import ServicePrincipalCredentials
+from azure.mgmt.managementgroups import ManagementGroupsAPI
+from settings import AZURE_TENANT_ID, AZURE_CLIENT_ID, AZURE_KEY, AZURE_SUBSCRIPTION_ID
 
 # This script expects that the following environment vars are set in settings.py:
 #
@@ -15,5 +17,19 @@ if __name__ == "__main__":
     # Delete me
     print(AZURE_TENANT_ID)
     print(AZURE_CLIENT_ID)
-    print(AZURE_CLIENT_SECRET)
+    print(AZURE_KEY)
     print(AZURE_SUBSCRIPTION_ID)
+
+    credentials = ServicePrincipalCredentials(
+        client_id=AZURE_CLIENT_ID,
+        secret=AZURE_KEY,
+        tenant=AZURE_TENANT_ID
+    )
+
+    management_group_client = ManagementGroupsAPI(credentials, base_url=None)
+
+    dir_test = vars(management_group_client)
+    print("Vars")
+    print(dir_test)
+
+

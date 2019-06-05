@@ -1,7 +1,8 @@
 # Don't upload private settings to github
 settings.py
 
-
+# VS Code
+.vscode/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
