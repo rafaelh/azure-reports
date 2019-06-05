@@ -1,3 +1,8 @@
+# Don't upload private settings to github
+settings.py
+
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
