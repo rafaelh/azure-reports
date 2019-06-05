@@ -1,5 +1,6 @@
-from settings import AZURE_TENANT_ID, AZURE_CLIENT_ID, AZURE_CLIENT_SECRET, AZURE_SUBSCRIPTION_ID
+""" Report on Dev Tenant Usage """
 import azure.mgmt.managementgroups
+from settings import AZURE_TENANT_ID, AZURE_CLIENT_ID, AZURE_CLIENT_SECRET, AZURE_SUBSCRIPTION_ID
 
 # This script expects that the following environment vars are set in settings.py:
 #
@@ -10,6 +11,8 @@ import azure.mgmt.managementgroups
 #
 
 if __name__ == "__main__":
+
+    # Delete me
     print(AZURE_TENANT_ID)
     print(AZURE_CLIENT_ID)
     print(AZURE_CLIENT_SECRET)
